@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { siteContent } from '../../data/siteContent';
+import { ProofBar } from './ProofBar';
 
 export function HomeHero() {
   const { brand } = siteContent;
@@ -23,6 +24,7 @@ export function HomeHero() {
           </Link>
         </div>
       </div>
+      <ProofBar />
     </section>
   );
 }

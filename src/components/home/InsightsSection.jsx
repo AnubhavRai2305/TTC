@@ -9,7 +9,7 @@ export function InsightsSection() {
     <section
       className="band band--tight"
       id="insights"
-      style={{ scrollMarginTop: '90px' }}
+      style={{ scrollMarginTop: '68px' }}
     >
       <div className="shell">
         <div

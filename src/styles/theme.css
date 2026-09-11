@@ -13,8 +13,14 @@
 }
 
 .hero--home {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding-top: calc(var(--nav-h) + clamp(56px, 7vw, 102px));
   padding-bottom: 0;
+  margin-bottom: -2px;
 }
 
 .hero__in {

@@ -6,7 +6,7 @@ export function OpportunitySection() {
   const { opportunity } = siteContent;
 
   return (
-    <section className="band" id="approach" style={{ scrollMarginTop: '90px' }}>
+    <section className="band" id="approach" style={{ scrollMarginTop: '68px' }}>
       <div className="shell">
         <div
           className="split"

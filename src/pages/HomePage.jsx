@@ -3,7 +3,6 @@ import { Navbar } from '../components/common/Navbar';
 import { Footer } from '../components/common/Footer';
 import { SkipLink } from '../components/common/SkipLink';
 import { HomeHero } from '../components/home/HomeHero';
-import { ProofBar } from '../components/home/ProofBar';
 import { OpportunitySection } from '../components/home/OpportunitySection';
 import { ModelSection } from '../components/home/ModelSection';
 import { PortfolioConstruction } from '../components/home/PortfolioConstruction';
@@ -21,7 +20,6 @@ export function HomePage() {
       <Navbar isHome={true} />
       <main id="main">
         <HomeHero />
-        <ProofBar />
         <OpportunitySection />
         <ModelSection />
         <PortfolioConstruction />
