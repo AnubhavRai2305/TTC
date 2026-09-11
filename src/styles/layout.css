@@ -1,0 +1,115 @@
+/* ==========================================================================
+   Layout Containers & Grid Systems
+   ========================================================================== */
+
+.shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin: 0 auto;
+  padding-left: var(--gut);
+  padding-right: var(--gut);
+}
+
+.band {
+  padding: var(--band) 0;
+}
+
+.band--tight {
+  padding: clamp(52px, 6vw, 86px) 0;
+}
+
+.band--tint {
+  background: var(--navy-050);
+}
+
+.band--line {
+  border-top: 1px solid var(--navy-100);
+}
+
+.band--navy {
+  background: var(--navy);
+  color: #fff;
+}
+
+.band--navy h1,
+.band--navy h2,
+.band--navy h3 {
+  color: #fff;
+}
+
+.band--navy p {
+  color: var(--navy-100);
+}
+
+.band--navy .cap {
+  color: var(--navy-300);
+}
+
+.band__head {
+  max-width: 72ch;
+  margin-bottom: clamp(38px, 4.4vw, 60px);
+}
+
+/* Grids */
+.grid {
+  display: grid;
+  gap: clamp(20px, 2.2vw, 32px);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: clamp(34px, 5vw, 80px);
+  align-items: start;
+}
+
+.split--wide {
+  grid-template-columns: 1.14fr 0.86fr;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1040px) {
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 860px) {
+  .split,
+  .split--wide {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+  .grid--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .grid--2,
+  .grid--4 {
+    grid-template-columns: 1fr 1fr;
+  }
+  .btn-row .btn {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .grid--2,
+  .grid--4 {
+    grid-template-columns: 1fr;
+  }
+}

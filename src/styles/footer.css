@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.foot {
+  background: var(--navy);
+  color: #fff;
+  padding: clamp(54px, 6vw, 80px) 0 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.foot__top {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: clamp(28px, 3.5vw, 52px);
+}
+
+.foot__addr {
+  margin-top: 20px;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: var(--navy-100);
+}
+
+.foot__addr a {
+  color: var(--navy-100);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.foot__addr a:hover {
+  color: #fff;
+  border-bottom-color: var(--gold);
+}
+
+.foot h4 {
+  font-family: var(--label);
+  color: var(--gold);
+  margin: 0 0 16px;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.foot ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.foot ul a {
+  font-size: 0.875rem;
+  color: var(--navy-100);
+  text-decoration: none;
+}
+
+.foot ul a:hover {
+  color: #fff;
+}
+
+.foot__legal {
+  margin-top: clamp(42px, 5vw, 62px);
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--navy-300);
+}
+
+.foot__base {
+  margin-top: 22px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-family: var(--label);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--navy-300);
+}
+
+@media (max-width: 860px) {
+  .foot__top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .foot__top {
+    grid-template-columns: 1fr;
+  }
+}

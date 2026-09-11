@@ -1,0 +1,103 @@
+/* ==========================================================================
+   Forms & Radios (Speak With Us)
+   ========================================================================== */
+
+.form {
+  max-width: 620px;
+}
+
+.field {
+  margin-bottom: 26px;
+}
+
+.field label {
+  display: block;
+  font-family: var(--label);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink-500);
+  margin-bottom: 10px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  font-family: var(--body);
+  font-size: 16px;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--ink-200);
+  padding: 14px 16px;
+  border-radius: 0;
+  transition: border-color 0.2s ease, outline-color 0.2s ease;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--navy);
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+}
+
+.field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.radios {
+  display: grid;
+  gap: 10px;
+}
+
+.radios label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--body);
+  font-size: 16px;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--ink);
+  cursor: pointer;
+  border: 1px solid var(--ink-200);
+  padding: 14px 16px;
+  background: #fff;
+  margin: 0;
+  transition: border-color 0.18s ease, background 0.18s ease;
+}
+
+.radios label:hover {
+  border-color: var(--gold-800);
+  background: var(--paper);
+}
+
+.radios label.is-selected {
+  border-color: var(--navy);
+  background: var(--gold-100);
+  color: var(--navy);
+  font-weight: 500;
+}
+
+.radios input[type="radio"] {
+  width: auto;
+  accent-color: var(--navy);
+  margin: 0;
+}
+
+.form__alert {
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  border-left: 4px solid var(--gold);
+  background: var(--gold-100);
+  color: var(--navy);
+  font-size: 15px;
+}
+
+.form__alert--success {
+  border-left-color: #2e7d32;
+  background: #e8f5e9;
+  color: #1b5e20;
+}

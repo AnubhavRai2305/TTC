@@ -1,0 +1,56 @@
+/* ==========================================================================
+   TIER TWO CAPITAL — Design Tokens
+   Derived from Brand Guidelines v1.0, July 2026.
+   ========================================================================== */
+
+:root {
+  /* Core Brand Palette */
+  --navy:        #001D51;
+  --navy-700:    #26406E;
+  --navy-500:    #52678C;
+  --navy-300:    #96A4BC;
+  --navy-100:    #DDE2EA;
+  --navy-050:    #EFF1F5;
+
+  --gold:        #B7975A;
+  --gold-800:    #8E6F33;
+  --gold-400:    #CBB37F;
+  --gold-300:    #DECFA9;
+  --gold-100:    #EFE8D8;
+
+  --ink:         #14151A;
+  --ink-700:     #3B3D44;
+  --ink-500:     #6B6E76;
+  --ink-300:     #ADAFB4;
+  --ink-200:     #DCDAD4;
+  --paper:       #FAF9F6;
+
+  /* Typography Font Stacks */
+  --display:     "Source Serif 4", "Cinzel", Georgia, serif;
+  --display-home:"Cinzel", Georgia, "Times New Roman", serif;
+  --aside:       "Cormorant Garamond", Georgia, serif;
+  --body:        "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --text:        "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --label:       "IBM Plex Mono", "Libre Franklin", ui-monospace, Menlo, monospace;
+
+  /* Layout Rhythm */
+  --shell:       1200px;
+  --gut:         clamp(20px, 4vw, 56px);
+  --band:        clamp(72px, 8.5vw, 128px);
+  --sect:        120px;
+  --nav-h:       82px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --sect: 84px;
+    --gut: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --sect: 64px;
+    --gut: 20px;
+  }
+}

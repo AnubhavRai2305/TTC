@@ -1,0 +1,470 @@
+/* ==========================================================================
+   Cards, Stats, Checklists, Phases, Cohorts & Team
+   ========================================================================== */
+
+/* Cards */
+.card {
+  padding: 30px 28px 32px;
+  background: #fff;
+  border: 1px solid var(--navy-100);
+  border-top: 2px solid var(--navy);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 34px -26px rgba(0, 29, 81, 0.5);
+}
+
+.card h3 {
+  margin-bottom: 4px;
+}
+
+.card p {
+  font-size: 0.92rem;
+  color: var(--ink-700);
+  margin: 0;
+}
+
+.card--gold {
+  border-top-color: var(--gold);
+}
+
+.card__idx {
+  display: block;
+  font-family: var(--label);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-800);
+}
+
+.card__icon {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+}
+
+.card--navy {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 2px solid var(--gold);
+}
+
+.card--navy:hover {
+  box-shadow: none;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.card--navy h3 {
+  color: #fff;
+}
+
+.card--navy p {
+  color: var(--navy-100);
+}
+
+.card--navy .card__idx {
+  color: var(--gold);
+}
+
+.card--plain {
+  border: 0;
+  border-top: 1px solid var(--ink-200);
+  padding: 30px 0 0;
+  background: none;
+}
+
+/* Stats */
+.stat {
+  border-top: 2px solid var(--gold);
+  padding-top: 16px;
+}
+
+.stat__n {
+  display: block;
+  font-family: var(--display);
+  font-weight: 300;
+  font-size: clamp(2rem, 3vw, 2.7rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 8px;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.band--navy .stat__n {
+  color: #fff;
+}
+
+.stat__l {
+  display: block;
+  font-family: var(--text);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--ink-700);
+  max-width: 30ch;
+}
+
+.band--navy .stat__l {
+  color: var(--navy-100);
+}
+
+/* Proof Bar (Hero) */
+.proof {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(28px, 4vw, 64px);
+}
+
+.proof__i {
+  padding: 30px 0 34px;
+}
+
+.proof__n {
+  display: block;
+  font-family: var(--text);
+  font-weight: 300;
+  font-size: clamp(2rem, 2.9vw, 2.6rem);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 12px;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+.proof__l {
+  display: block;
+  font-family: var(--text);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--navy-300);
+  max-width: 26ch;
+}
+
+@media (max-width: 860px) {
+  .proof {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .proof__i {
+    padding: 16px 0;
+  }
+}
+
+/* Checklists */
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.checklist li {
+  position: relative;
+  padding: 0 0 16px 26px;
+  font-size: 16px;
+  color: var(--ink-700);
+}
+
+.checklist li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+}
+
+.band--navy .checklist li {
+  color: var(--navy-100);
+}
+
+/* Phases (Circle Programme) */
+.phase {
+  border-top: 2px solid var(--navy);
+  padding-top: 28px;
+}
+
+.phase__tag {
+  font-family: var(--label);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-800);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.phase__note {
+  font-style: italic;
+  font-family: Georgia, serif;
+  color: var(--ink-500);
+  margin: 14px 0 26px;
+}
+
+.phase__exit {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--ink-200);
+  font-size: 14px;
+  color: var(--ink-500);
+}
+
+/* Cohort (Circle 8 Companies) */
+.cohort {
+  border-top: 1px solid var(--ink-200);
+}
+
+.cohort__row {
+  display: grid;
+  grid-template-columns: 44px 220px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--ink-200);
+  align-items: baseline;
+}
+
+.cohort__i {
+  font-family: var(--label);
+  font-size: 12px;
+  color: var(--gold-800);
+}
+
+.cohort__n {
+  font-family: var(--display);
+  font-size: 19px;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+}
+
+.cohort__d {
+  font-size: 15px;
+  color: var(--ink-700);
+}
+
+@media (max-width: 760px) {
+  .cohort__row {
+    grid-template-columns: 34px 1fr;
+    gap: 6px 16px;
+  }
+  .cohort__d {
+    grid-column: 2;
+  }
+}
+
+/* Team Grid */
+.team {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(20px, 2.4vw, 32px);
+}
+
+.team__i .photo__frame {
+  aspect-ratio: 4/5;
+}
+
+.team__n {
+  display: block;
+  font-family: var(--text);
+  font-weight: 600;
+  font-size: 1.06rem;
+  color: var(--ink);
+  margin: 16px 0 4px;
+}
+
+.team__r {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-800);
+  margin-bottom: 10px;
+}
+
+.team__b {
+  font-size: 0.875rem;
+  color: var(--ink-700);
+  margin: 0;
+}
+
+@media (max-width: 1040px) {
+  .team {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .team {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Programme Lockup (1 Cr. Circle in Origination) */
+.proglogo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 0 0 30px;
+}
+
+.proglogo img {
+  height: 76px;
+  width: auto;
+  flex: 0 0 auto;
+}
+
+.proglogo__by {
+  padding-left: 20px;
+  border-left: 1px solid var(--ink-300);
+  font-family: var(--text);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.55;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+@media (max-width: 420px) {
+  .proglogo {
+    gap: 14px;
+  }
+  .proglogo img {
+    height: 60px;
+  }
+  .proglogo__by {
+    padding-left: 14px;
+    letter-spacing: 0.14em;
+  }
+}
+
+/* Editorial Photo Frame */
+.photo {
+  position: relative;
+  margin: 0;
+}
+
+.photo__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  background: var(--navy-050);
+  border: 1px solid var(--navy-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo__frame--wide {
+  aspect-ratio: 16/9;
+}
+
+.photo__cap {
+  display: block;
+  margin-top: 11px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--ink-500);
+}
+
+/* Posts / Insights Grid */
+.posts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 2.4vw, 32px);
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  border-top: 2px solid var(--navy);
+  padding-top: 18px;
+  transition: border-color 0.25s ease;
+}
+
+.post:hover {
+  border-top-color: var(--gold);
+}
+
+.post__k {
+  font-family: var(--label);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-500);
+}
+
+.post h3 {
+  font-size: 1.06rem;
+  color: var(--navy);
+}
+
+.post p {
+  font-size: 0.875rem;
+  color: var(--ink-700);
+  margin: 0;
+}
+
+@media (max-width: 1040px) {
+  .posts {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Close Section */
+.close {
+  text-align: center;
+  max-width: 58ch;
+  margin-inline: auto;
+}
+
+.close h2 {
+  margin-bottom: 22px;
+}
+
+.close .lede {
+  margin-inline: auto;
+}
+
+.close .btn-row {
+  justify-content: center;
+}
+
+.close__note {
+  margin-top: 28px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--navy-300);
+  max-width: 54ch;
+  margin-inline: auto;
+}
+
+@media (max-width: 720px) {
+  .close .btn-row {
+    flex-direction: column;
+  }
+}

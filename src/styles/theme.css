@@ -1,0 +1,130 @@
+/* ==========================================================================
+   Editorial Theme & Hero Geometry Overrides
+   Derived from pre/theme.css and pre/styles.css
+   ========================================================================== */
+
+/* Hero Base */
+.hero {
+  position: relative;
+  background: var(--navy);
+  color: #fff;
+  overflow: hidden;
+  padding: clamp(80px, 11vw, 148px) 0 clamp(72px, 10vw, 130px);
+}
+
+.hero--home {
+  padding-top: calc(var(--nav-h) + clamp(56px, 7vw, 102px));
+  padding-bottom: 0;
+}
+
+.hero__in {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.hero h1 {
+  color: #fff;
+}
+
+.hero .lede {
+  color: var(--navy-100);
+  margin-top: 26px;
+}
+
+.hero--home h1 {
+  margin-bottom: 30px;
+}
+
+.hero--home .lede {
+  max-width: 58ch;
+  color: #DDE2EA;
+}
+
+.hero--home .btn-row {
+  margin-top: 38px;
+  margin-bottom: clamp(62px, 8vw, 100px);
+}
+
+.hero__status {
+  font-family: var(--label);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--gold);
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(183, 151, 90, 0.4);
+  display: inline-block;
+}
+
+/* Hero Background Geometry (45-degree cuts) */
+.hero__art {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero__art i {
+  position: absolute;
+  display: block;
+}
+
+.hero__art i:nth-child(1) {
+  right: -140px;
+  top: -80px;
+  width: 620px;
+  height: 620px;
+  background: #06255C;
+  transform: rotate(45deg);
+  outline: 1px solid rgba(183, 151, 90, 0.45);
+  outline-offset: 16px;
+}
+
+.hero__art i:nth-child(2) {
+  right: 120px;
+  bottom: -260px;
+  width: 420px;
+  height: 420px;
+  background: #04214F;
+  transform: rotate(45deg);
+}
+
+/* Homepage SVG Motif */
+.hero__motif {
+  position: absolute;
+  right: 4%;
+  top: 7%;
+  width: min(40vw, 520px);
+  height: auto;
+}
+
+@media (max-width: 860px) {
+  .hero__motif {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero__art i:nth-child(1) {
+    width: 380px;
+    height: 380px;
+    right: -160px;
+    top: -110px;
+  }
+  .hero__art i:nth-child(2) {
+    display: none;
+  }
+}
+
+/* Inner pages display type */
+.page--inner h1,
+.page--inner h2 {
+  font-family: "Source Serif 4", Georgia, serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.page--inner h3 {
+  font-weight: 500;
+}

@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Buttons & Text Links
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6em;
+  font-family: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 15px 28px;
+  border: 1px solid var(--navy);
+  background: var(--navy);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 0.22s ease, border-color 0.22s ease, color 0.22s ease;
+}
+
+.btn:hover {
+  background: var(--navy-700);
+  border-color: var(--navy-700);
+  color: #fff;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy-300);
+}
+
+.btn--ghost:hover {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+}
+
+.btn--onnavy {
+  background: var(--paper);
+  border-color: var(--paper);
+  color: var(--navy);
+}
+
+.btn--onnavy:hover {
+  background: var(--navy-100);
+  border-color: var(--navy-100);
+  color: var(--navy);
+}
+
+.btn--ghostlight {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.34);
+}
+
+.btn--ghostlight:hover {
+  background: #fff;
+  border-color: #fff;
+  color: var(--navy);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.txtlink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--navy);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 3px;
+  transition: gap 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.txtlink:hover {
+  gap: 0.8em;
+  border-bottom-color: var(--gold-800);
+  color: var(--gold-800);
+}
+
+.txtlink--light {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+.txtlink--light:hover {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+.band--navy .txtlink {
+  color: #fff;
+  border-bottom-color: var(--gold);
+}
+
+.band--navy .txtlink:hover {
+  border-bottom-color: #fff;
+}
