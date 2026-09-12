@@ -9,6 +9,20 @@ export function Navbar({ isHome = false }) {
   const navigate = useNavigate();
   const { isStuck, isMobileOpen, toggleMobile, closeMobile } = useNavScroll(isHome);
 
+  const handleLogoClick = (e) => {
+    closeMobile();
+    if (location.pathname === '/') {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (window.location.hash) {
+        window.history.pushState(null, '', '/');
+      }
+    } else {
+      navigate('/');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
   const handleHashLink = (e, hash) => {
     e.preventDefault();
     closeMobile();
@@ -34,7 +48,7 @@ export function Navbar({ isHome = false }) {
           to="/"
           className="mark"
           aria-label="Tier Two Capital, home"
-          onClick={closeMobile}
+          onClick={handleLogoClick}
         >
           <img
             className="logo--light"

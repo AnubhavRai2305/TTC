@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSpeakWithUs } from '../../hooks/useSpeakWithUs';
 
 export function SpeakWithUsForm() {
@@ -11,6 +11,8 @@ export function SpeakWithUsForm() {
     setName,
     email,
     setEmail,
+    phone,
+    setPhone,
     organisation,
     setOrganisation,
     message,
@@ -19,8 +21,24 @@ export function SpeakWithUsForm() {
     submitted,
     feedback,
     error,
+    clearStatus,
     handleSubmit,
   } = useSpeakWithUs();
+
+  // Close popout on Escape key
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        clearStatus();
+      }
+    };
+    if (submitted || error) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [submitted, error, clearStatus]);
 
   if (loadingConfig || !config) {
     return <div className="form">Loading form...</div>;
@@ -30,20 +48,87 @@ export function SpeakWithUsForm() {
 
   return (
     <div className="form">
-      {submitted ? (
-        <div className="form__alert form__alert--success" role="alert">
-          <h3 style={{ color: 'inherit', marginBottom: '8px' }}>
-            Message Sent
-          </h3>
-          <p style={{ margin: 0 }}>{feedback}</p>
-        </div>
-      ) : null}
+      {/* Popout Feedback Modal */}
+      {(submitted || error) && (
+        <div
+          className="form-popout-overlay"
+          onClick={clearStatus}
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="form-popout"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="form-popout__close"
+              onClick={clearStatus}
+              aria-label="Close"
+            >
+              &times;
+            </button>
 
-      {error ? (
-        <div className="form__alert" role="alert">
-          <p style={{ margin: 0, color: '#c62828' }}>{error}</p>
+            {submitted ? (
+              <>
+                <div className="form-popout__icon-wrap form-popout__icon-wrap--success">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                </div>
+                <h3 className="form-popout__title">Message Sent</h3>
+                <p className="form-popout__message">
+                  {feedback || 'Thank you for reaching out. We will get back to you within 2 business days.'}
+                </p>
+                <button
+                  type="button"
+                  className="form-popout__action"
+                  onClick={clearStatus}
+                >
+                  Got It
+                </button>
+              </>
+            ) : (
+              <>
+                <div className="form-popout__icon-wrap form-popout__icon-wrap--error">
+                  <svg
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                  </svg>
+                </div>
+                <h3 className="form-popout__title">Check Your Form</h3>
+                <p className="form-popout__message">{error}</p>
+                <button
+                  type="button"
+                  className="form-popout__action"
+                  onClick={clearStatus}
+                >
+                  Okay, Fix Details
+                </button>
+              </>
+            )}
+          </div>
         </div>
-      ) : null}
+      )}
 
       <form onSubmit={handleSubmit} noValidate>
         {/* Enquiry Selector */}
@@ -85,7 +170,9 @@ export function SpeakWithUsForm() {
 
         {/* Name */}
         <div className="field">
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">
+            Name <span className="req">*</span>
+          </label>
           <input
             type="text"
             id="name"
@@ -99,7 +186,9 @@ export function SpeakWithUsForm() {
 
         {/* Email */}
         <div className="field">
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">
+            Email <span className="req">*</span>
+          </label>
           <input
             type="email"
             id="email"
@@ -111,9 +200,27 @@ export function SpeakWithUsForm() {
           />
         </div>
 
+        {/* Phone */}
+        <div className="field">
+          <label htmlFor="phone">Phone number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            autoComplete="tel"
+            inputMode="numeric"
+            pattern="[0-9]*"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}
+            placeholder="Numbers only"
+          />
+        </div>
+
         {/* Organisation */}
         <div className="field">
-          <label htmlFor="org">Organisation</label>
+          <label htmlFor="org">
+            Organisation <span className="req">*</span>
+          </label>
           <input
             type="text"
             id="org"
@@ -121,12 +228,15 @@ export function SpeakWithUsForm() {
             autoComplete="organization"
             value={organisation}
             onChange={(e) => setOrganisation(e.target.value)}
+            required
           />
         </div>
 
         {/* Message */}
         <div className="field">
-          <label htmlFor="msg">Message</label>
+          <label htmlFor="msg">
+            Message <span className="req">*</span>
+          </label>
           <textarea
             id="msg"
             name="message"

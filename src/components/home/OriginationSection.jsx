@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { siteContent } from '../../data/siteContent';
-import circleLogo from '../../assets/images/circle-logo.png';
+import circleLogo from '../../assets/images/1cr-circle-logo.png';
+import { Counter } from '../common/Counter';
 
 export function OriginationSection() {
   const { origination } = siteContent;
@@ -41,7 +42,7 @@ export function OriginationSection() {
         <div className="grid grid--4 rv">
           {origination.stats.map((st, idx) => (
             <div className="stat" key={idx}>
-              <span className="stat__n">{st.number}</span>
+              <Counter className="stat__n" value={st.number} />
               <span className="stat__l">{st.label}</span>
             </div>
           ))}

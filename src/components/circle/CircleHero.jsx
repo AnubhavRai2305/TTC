@@ -19,7 +19,7 @@ export function CircleHero() {
           possible.
         </p>
         <span className="hero__status">
-          Cohort One &middot; 2026 &middot; engagements running
+          Cohort One &middot; 2026 &middot; Engagements Running
         </span>
       </div>
     </section>

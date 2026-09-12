@@ -15,6 +15,7 @@ export function useSpeakWithUs() {
   const [enquiry, setEnquiry] = useState('founder');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [organisation, setOrganisation] = useState('');
   const [message, setMessage] = useState('');
 
@@ -54,9 +55,28 @@ export function useSpeakWithUs() {
     if (e) e.preventDefault();
     setError('');
 
-    if (!name.trim() || !email.trim() || !message.trim()) {
+    if (!name.trim() || !email.trim() || !organisation.trim() || !message.trim()) {
       setError('Please fill in all required fields.');
       return;
+    }
+
+    // Validate email format
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailRegex.test(email.trim())) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+
+    // Validate phone number (only digits, 7 to 15 numbers)
+    if (phone.trim()) {
+      if (!/^\d+$/.test(phone.trim())) {
+        setError('Phone number should only contain numbers.');
+        return;
+      }
+      if (phone.trim().length < 7 || phone.trim().length > 15) {
+        setError('Please enter a valid phone number (7 to 15 digits).');
+        return;
+      }
     }
 
     setSubmitting(true);
@@ -65,6 +85,7 @@ export function useSpeakWithUs() {
         enquiry,
         name,
         email,
+        phone,
         organisation,
         message,
       });
@@ -84,6 +105,11 @@ export function useSpeakWithUs() {
     }
   };
 
+  const clearStatus = () => {
+    setError('');
+    setSubmitted(false);
+  };
+
   return {
     config,
     loadingConfig,
@@ -93,14 +119,20 @@ export function useSpeakWithUs() {
     setName,
     email,
     setEmail,
+    phone,
+    setPhone,
     organisation,
     setOrganisation,
     message,
     setMessage,
     submitting,
     submitted,
+    setSubmitted,
     feedback,
+    setFeedback,
     error,
+    setError,
+    clearStatus,
     handleSubmit,
   };
 }

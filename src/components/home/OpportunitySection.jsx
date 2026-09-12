@@ -1,6 +1,7 @@
 import React from 'react';
 import { siteContent } from '../../data/siteContent';
 import biharInfraImage from '../../assets/images/bihar-infrastructure.jpg';
+import { Counter } from '../common/Counter';
 
 export function OpportunitySection() {
   const { opportunity } = siteContent;
@@ -30,7 +31,7 @@ export function OpportunitySection() {
         <div className="grid grid--3 rv">
           {opportunity.stats.map((st, idx) => (
             <div className="stat" key={idx}>
-              <span className="stat__n">{st.number}</span>
+              <Counter className="stat__n" value={st.number} />
               <span className="stat__l">{st.label}</span>
             </div>
           ))}
