@@ -171,7 +171,7 @@ export function SpeakWithUsForm() {
         {/* Name */}
         <div className="field">
           <label htmlFor="name">
-            Name <span className="req">*</span>
+            Name<span className="req">*</span>
           </label>
           <input
             type="text"
@@ -187,7 +187,7 @@ export function SpeakWithUsForm() {
         {/* Email */}
         <div className="field">
           <label htmlFor="email">
-            Email <span className="req">*</span>
+            Email<span className="req">*</span>
           </label>
           <input
             type="email"
@@ -212,14 +212,13 @@ export function SpeakWithUsForm() {
             pattern="[0-9]*"
             value={phone}
             onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}
-            placeholder="Numbers only"
           />
         </div>
 
         {/* Organisation */}
         <div className="field">
           <label htmlFor="org">
-            Organisation <span className="req">*</span>
+            Organisation<span className="req">*</span>
           </label>
           <input
             type="text"
@@ -235,7 +234,7 @@ export function SpeakWithUsForm() {
         {/* Message */}
         <div className="field">
           <label htmlFor="msg">
-            Message <span className="req">*</span>
+            Message<span className="req">*</span>
           </label>
           <textarea
             id="msg"

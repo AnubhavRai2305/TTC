@@ -37,12 +37,14 @@ export function PortfolioConstruction() {
           <div>
             <p>{portfolioConstruction.allocatorQuestion.paragraph}</p>
             <div className="btn-row" style={{ marginTop: '20px' }}>
-              <Link
-                to={`/insights/${portfolioConstruction.allocatorQuestion.linkSlug}`}
+              <a
+                href={portfolioConstruction.allocatorQuestion.linkUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="txtlink"
               >
-                Read: <em>Where will Bihar’s first exits come from?</em> &rarr;
-              </Link>
+                Read: <em>{portfolioConstruction.allocatorQuestion.linkText}</em> &rarr;
+              </a>
             </div>
           </div>
         </div>

@@ -1,14 +1,20 @@
+import insight1Img from '../assets/images/insights_1.jpg';
+import insight2Img from '../assets/images/insights_2.png';
+import insight3Img from '../assets/images/insights_3.jpg';
+
 export const insightsData = [
   {
     id: 'insight-1',
-    slug: 'where-will-bihars-first-exits-come-from',
-    category: 'Exit pathways',
-    title: 'Where will Bihar’s first exits come from?',
+    slug: 'spray-pray-wont-get-exits-holding-building',
+    category: 'Exit Pathways',
+    title: "Spray and Pray Won't Get Exits. Holding and Building Will.",
     excerpt:
-      'Why exits in a market without an exit market have to be manufactured deliberately, one company at a time.',
-    author: 'Anurag Singh & Aditya Agrawal',
-    publishedAt: 'July 2026',
-    readTime: '6 min read',
+      'Bihar has no exit market. No strategic buyers, no local IPO culture. So exits cannot be found; they have to be built. That rules out twenty cheques and a prayer. Back five or six companies, operate them hard, take them to ₹100 crore revenue, and the mid-market becomes the buyer.',
+    link: 'https://www.linkedin.com/pulse/spray-pray-wont-get-exits-holding-building-anurag-singh-rj89c/',
+    image: insight1Img,
+    author: 'Anurag Singh',
+    publishedAt: 'LinkedIn',
+    readTime: 'Read on LinkedIn',
     content: [
       'Frontier markets in India face an apparent paradox: strong baseline consumption growth, rising domestic production, yet an almost total absence of institutional private capital exits.',
       'In Tier-1 startup hubs, venture capital assumes liquidity through secondary sales, subsequent growth rounds, or public offerings. But in Bihar, an exit market does not exist ready-made. Therefore, exits cannot simply be waited for—they have to be deliberately engineered from Day 1.',
@@ -18,32 +24,36 @@ export const insightsData = [
   },
   {
     id: 'insight-2',
-    slug: 'the-operating-layer-in-frontier-markets',
-    category: 'Governance & Structure',
-    title: 'The Operating Layer in Frontier Markets',
+    slug: 'beyond-philanthropy-case-bihar-fund',
+    category: 'Capital Infrastructure',
+    title: 'Beyond Philanthropy: The Case for a Bihar Fund.',
     excerpt:
-      'Why capital without operational infrastructure creates friction, and how installing the layer unlocks growth.',
-    author: 'Tier Two Capital Research',
-    publishedAt: 'August 2026',
-    readTime: '4 min read',
+      "Can a diaspora become more than a source of remittances? Bihar's next phase of growth will be built on equity, trust, and long-term participation.",
+    link: 'https://www.linkedin.com/pulse/beyond-philanthropy-case-bihar-fund-anurag-singh-yvuec/',
+    image: insight2Img,
+    author: 'Anurag Singh',
+    publishedAt: 'LinkedIn',
+    readTime: 'Read on LinkedIn',
     content: [
-      'In mature financial hubs, businesses are surrounded by an ecosystem of compliance, institutional accounting, independent directors, and debt facilitators.',
-      'When this infrastructure is missing, capital remains skeptical even of highly profitable, cash-generative operations. By deploying embedded operating teams directly into portfolio companies, we bridge the trust deficit.',
+      'Can a diaspora become more than a source of remittances? Bihar’s next phase of growth will be built on equity, trust, and long-term participation.',
+      'Frontier regions need formal, institutional capital vehicles that direct investment into productive enterprise rather than passive subsidies.',
     ],
   },
   {
     id: 'insight-3',
-    slug: 'unlocking-msme-finance-beyond-the-metro',
-    category: 'Capital Infrastructure',
-    title: 'Unlocking MSME Finance Beyond the Metro',
+    slug: 'trust-asset-nobody-building-bihar',
+    category: 'Governance & Structure',
+    title: 'Trust is the Asset Nobody is Building in Bihar',
     excerpt:
-      'How formal banking and structured credit can reach the 70% of enterprises currently excluded.',
-    author: 'Tier Two Capital Research',
-    publishedAt: 'September 2026',
-    readTime: '5 min read',
+      "Diaspora capital doesn't avoid Bihar out of indifference. It avoids Bihar because it can't see clearly enough to say yes. De-risking the only intervention that actually moves the needle.",
+    link: 'https://www.linkedin.com/pulse/trust-asset-nobody-building-bihar-tier-two-capital-fmxzc/',
+    image: insight3Img,
+    author: 'Tier Two Capital',
+    publishedAt: 'LinkedIn',
+    readTime: 'Read on LinkedIn',
     content: [
-      'Less than 30% of MSMEs in Bihar access formal bank finance. The constraint is rarely repayment capacity; it is documentation velocity and compliance cadence.',
-      'When an enterprise operates on a clean monthly MIS with verified GST returns and automated bank reconciliations, banking appetite transforms from collateral-dependent reluctance to working-capital support.',
+      'Diaspora capital doesn’t avoid Bihar out of indifference. It avoids Bihar because it can’t see clearly enough to say yes. De-risking the only intervention that actually moves the needle.',
+      'When an enterprise operates on a clean monthly MIS with verified GST returns and automated bank reconciliations, investor appetite transforms from reluctance to active partnership.',
     ],
   },
 ];

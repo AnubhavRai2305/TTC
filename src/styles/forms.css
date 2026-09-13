@@ -23,7 +23,10 @@
 .field label .req {
   color: var(--gold-800);
   font-weight: 600;
-  margin-left: 2px;
+  font-size: 0.8em;
+  vertical-align: super;
+  line-height: 0;
+  margin-left: 1px;
 }
 
 .field input,

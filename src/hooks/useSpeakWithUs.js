@@ -98,8 +98,11 @@ export function useSpeakWithUs() {
       } else {
         setError('Something went wrong. Please try again.');
       }
-    } catch {
-      setError('An error occurred during submission. Please write directly to our email.');
+    } catch (err) {
+      setError(
+        err?.message ||
+          'An error occurred during submission. Please write directly to our email.'
+      );
     } finally {
       setSubmitting(false);
     }

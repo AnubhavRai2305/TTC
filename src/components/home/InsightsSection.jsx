@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { InsightCard } from '../insights/InsightCard';
 import { useInsights } from '../../hooks/useInsights';
 
 export function InsightsSection() {
@@ -31,15 +31,7 @@ export function InsightsSection() {
 
         <div className="posts rv">
           {insights.map((item) => (
-            <Link
-              key={item.id}
-              to={`/insights/${item.slug}`}
-              className="post"
-            >
-              <span className="post__k">{item.category}</span>
-              <h3>{item.title}</h3>
-              <p>{item.excerpt}</p>
-            </Link>
+            <InsightCard key={item.id} insight={item} />
           ))}
         </div>
       </div>

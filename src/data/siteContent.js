@@ -93,8 +93,9 @@ export const siteContent = {
       title: 'Where do the exits come from?',
       paragraph:
         'No exit market exists in Bihar today, so exits are not found. They are manufactured, company by company. ₹100 crore of revenue is the threshold at which mid-market capital enters, and building companies to that line is the explicit job of the operating layer rather than a hoped-for consequence of it.',
-      linkText: 'Read: Where will Bihar’s first exits come from?',
-      linkSlug: 'where-will-bihars-first-exits-come-from',
+      linkText: 'Spray and Pray Won’t Get Exits. Holding and Building Will.',
+      linkUrl:
+        'https://www.linkedin.com/pulse/spray-pray-wont-get-exits-holding-building-anurag-singh-rj89c/',
     },
   },
   origination: {
